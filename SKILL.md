@@ -1,5 +1,7 @@
 ---
-description: "Use this skill when testing is needed — writing tests, running test suites, analyzing coverage gaps, or validating changes. Two modes: 'test this' for targeted testing of specific changes, and 'test everything' for comprehensive project-wide test audits. Adapts to any test framework (Jest, Vitest, pytest, Go test, etc.)."
+name: code-testing
+description: Use when testing is needed: planning tests, writing tests, running test suites, analyzing coverage gaps, validating changes, fixing broken test infrastructure, or auditing project-wide test quality. Supports targeted "test this" work and comprehensive "test everything" audits across common frameworks such as Vitest, Jest, pytest, Go test, Cargo test, RSpec, ExUnit, and more.
+when_to_use: Trigger when the user asks to test a file, feature, bug fix, pull request, recent change, UI flow, API, parser, service, or whole project; when tests are failing; when coverage or test quality is unclear; or before shipping a risky code change.
 ---
 
 # Intelligent Test Generation & Execution

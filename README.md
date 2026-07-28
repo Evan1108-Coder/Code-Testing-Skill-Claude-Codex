@@ -84,22 +84,55 @@ Any language with a standard test runner:
 - Elixir (ExUnit)
 - And more
 
+## Structure
+
+```text
+.
+├── SKILL.md                    # Core testing skill
+├── scripts/
+│   └── validate-skill.mjs      # Skill package validation
+├── docs/
+│   ├── assets/
+│   ├── images/
+│   └── project-snapshot.md
+├── .github/
+│   ├── ISSUE_TEMPLATE/bug_report.md
+│   ├── workflows/ci.yml
+│   └── pull_request_template.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── LICENSE
+└── README.md
+```
+
 ## Installation
 
 ### Claude Code
 
-Copy the `skill/SKILL.md` file into your project:
+Install this repository as the skill folder:
 
 ```bash
-mkdir -p .claude/skills/test
-cp skill/SKILL.md .claude/skills/test/SKILL.md
+mkdir -p .claude/skills
+git clone https://github.com/Evan1108-Coder/Code-Testing-Skill-Claude-Codex.git .claude/skills/code-testing
 ```
 
-Then invoke with `/test` or ask Claude to test your code.
+For user-level Claude Code installation:
+
+```bash
+mkdir -p ~/.claude/skills
+git clone https://github.com/Evan1108-Coder/Code-Testing-Skill-Claude-Codex.git ~/.claude/skills/code-testing
+```
 
 ### Codex
 
-Add the contents of `skill/SKILL.md` to your Codex agent's system instructions or custom instructions file.
+Install the same root skill folder into your Codex skills directory:
+
+```bash
+mkdir -p ~/.codex/skills
+git clone https://github.com/Evan1108-Coder/Code-Testing-Skill-Claude-Codex.git ~/.codex/skills/code-testing
+```
+
+Claude and Codex use the same root `SKILL.md` package format in this repository.
 
 ## Usage Examples
 
@@ -127,6 +160,12 @@ Add the contents of `skill/SKILL.md` to your Codex agent's system instructions o
 - No test interdependence
 - Minimal mocking (only external services, time, randomness)
 - Deterministic — no flaky tests
+
+## Validation
+
+```bash
+node scripts/validate-skill.mjs
+```
 
 ## License
 

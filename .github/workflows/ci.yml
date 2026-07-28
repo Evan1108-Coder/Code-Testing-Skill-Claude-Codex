@@ -23,12 +23,14 @@ jobs:
           test -f LICENSE
           test -f SECURITY.md
           test -f CONTRIBUTING.md
-          test -f skill/SKILL.md
-          test -f docs/INSTALL.md
-          test -f docs/USAGE.md
+          test -f SKILL.md
+          test -f scripts/validate-skill.mjs
 
       - name: Check Markdown is non-empty
         run: |
-          for file in README.md SECURITY.md CONTRIBUTING.md skill/SKILL.md docs/INSTALL.md docs/USAGE.md; do
+          for file in README.md SECURITY.md CONTRIBUTING.md SKILL.md; do
             test -s "$file"
           done
+
+      - name: Validate skill package
+        run: node scripts/validate-skill.mjs
